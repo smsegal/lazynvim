@@ -2,8 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-local Util = require("lazyvim.util")
-
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
   ---@cast keys LazyKeysHandler
@@ -27,3 +25,8 @@ local toggle_term = function()
   term:toggle()
 end
 map("n", "<leader>'", toggle_term, { desc = "terminal" })
+
+-- file keymaps (like doom)
+map("n", "<leader>fs", function()
+  vim.cmd.write(vim.api.nvim_buf_get_name(0))
+end, { desc = "save file" })
