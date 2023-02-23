@@ -1,4 +1,4 @@
 return {
-  { "akinsho/nvim-bufferline.lua", enabled = false },
+  { "akinsho/bufferline.nvim", enabled = false },
   { "echasnovski/mini.surround", enabled = false },
 }

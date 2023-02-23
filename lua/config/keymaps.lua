@@ -12,3 +12,18 @@ local function map(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, opts)
   end
 end
+
+map("n", "<leader>w", "<C-w>", { desc = "+windows" })
+
+-- setup toggleterm
+local terminal = require("toggleterm.terminal").Terminal
+local term = terminal:new({
+  on_open = function(term)
+    vim.cmd("startinsert!")
+    vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+  end,
+})
+local toggle_term = function()
+  term:toggle()
+end
+map("n", "<leader>'", toggle_term, { desc = "terminal" })
