@@ -15,6 +15,7 @@ return {
           nls.builtins.diagnostics.zsh,
           nls.builtins.diagnostics.hadolint,
           nls.builtins.formatting.prettierd,
+          nls.builtins.formatting.beautysh,
         },
       }
     end,
