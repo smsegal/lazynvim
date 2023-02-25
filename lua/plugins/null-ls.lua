@@ -6,7 +6,8 @@ return {
       return {
         sources = {
           nls.builtins.formatting.stylua,
-          nls.builtins.diagnostics.ruff,
+          -- nls.builtins.diagnostics.ruff,
+          nls.builtins.formatting.usort,
           nls.builtins.formatting.ruff,
           nls.builtins.formatting.black,
           nls.builtins.code_actions.shellcheck,
