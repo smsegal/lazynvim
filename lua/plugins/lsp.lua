@@ -10,8 +10,6 @@ return {
           pylsp = {
             plugins = {
               rope_autoimport = { enabled = true },
-              ruff = { enabled = true },
-              mypy = { enabled = true },
             },
           },
         },
