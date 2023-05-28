@@ -4,6 +4,8 @@ return {
     autoformat = false,
     ---@type lspconfig.options
     servers = {
+      nil_ls = { mason = false },
+      pyright = { mason = false },
       pylsp = {
         mason = false,
         settings = {

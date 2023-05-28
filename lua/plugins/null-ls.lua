@@ -3,18 +3,6 @@ return {
     "jose-elias-alvarez/null-ls.nvim",
     opts = function()
       local nls = require("null-ls")
-      local nls_helpers = require("null-ls.helpers")
-      local nls_methods = require("null-ls.methods")
-      local FORMATTING = nls_methods.FORMATTING
-      local nix_fmt = {
-        method = FORMATTING,
-        name = "nix fmt",
-        filetypes = { "nix" },
-        factory = nls_helpers.formatter_factory {
-          command = "nix fmt",
-          -- args = { "--quiet" },
-        },
-      }
       return {
         sources = {
           nls.builtins.code_actions.shellcheck,
@@ -30,6 +18,7 @@ return {
           nls.builtins.formatting.ruff,
           nls.builtins.formatting.stylua,
           nls.builtins.formatting.usort,
+          nls.builtins.formatting.alejandra,
         },
       }
     end,
